@@ -1,3 +1,6 @@
+import { ApolloProvider } from "@apollo/client/react";
+import client from "../lib/apollo";
+
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./styles.scss";
@@ -18,7 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Navbar />
-        {children}
+        <ApolloProvider client={client}>{children}</ApolloProvider>
         <Footer />
       </body>
     </html>

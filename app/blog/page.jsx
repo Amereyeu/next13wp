@@ -1,42 +1,43 @@
-// import { useState, useEffect } from "react";
-import { useQuery } from "@apollo/client";
-import { GET_ALL_POSTS } from "../../gql/queries";
+import { client } from "../../lib/apollo";
+import { gql } from "@apollo/client";
 
-function Blog() {
-  const { loading, error, data } = useQuery(GET_ALL_POSTS);
+export default function Blog({ posts }) {
+  return (
+    <div>
+      <h3>Blog posts</h3>
 
-  if (loading) {
-    return (
-      <div className="posts__placeholder">
-        <div className="circle"></div>
+      <div className="grid">
+        {posts.map((post) => {
+          return <div key={post.id}>+++</div>;
+        })}
       </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="posts__placeholder">
-        <div>
-          <p>Error loading posts!</p>
-        </div>
-      </div>
-    );
-  }
-
-  const postsFound = Boolean(data?.posts.nodes.length);
-
-  if (!postsFound) {
-    return (
-      <div className="posts__placeholder">
-        <div>
-          <p>No posts found!</p>
-        </div>
-      </div>
-    );
-  }
-
-  return <div>Blog</div>;
+    </div>
+  );
 }
 
-export default Blog;
+export async function getStaticProps() {
+  const GET_POSTS = gql`
+    query AllPostsQuery {
+      customPosts {
+        nodes {
+          title
+          id
+          content
+        }
+      }
+    }
+  `;
+
+  const response = await client.query({
+    query: GET_POSTS,
+  });
+
+  const posts = response?.data?.posts?.nodes;
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
 
