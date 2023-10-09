@@ -7,8 +7,8 @@ export default function NotFound() {
       <p>We could not find the page you were looking for.</p>
       <p>
         Go back to the <Link href="/">homepage</Link>.
-        
       </p>
     </main>
   );
 }
+
