@@ -1,51 +1,13 @@
-import { useQuery } from "@apollo/client";
+"use client";
+
+import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+import { GET_ALL_CUSTOM_POSTS } from "@/gql/queries";
 import CustomPost from "./CustomPost";
-import { GET_ALL_CUSTOM_POSTS } from "../../gql/queries";
 
-function CustomPosts({ lg }) {
-  const { loading, error, data } = useQuery(GET_ALL_CUSTOM_POSTS, {
-    variables: {
-      language: lg,
-    },
-  });
+function CustomPosts() {
+  const { data } = useSuspenseQuery(GET_ALL_CUSTOM_POSTS);
 
-  if (loading) {
-    return (
-      <div className="post-wrap">
-        <div className="posts__placeholder">
-          <div className="circle"></div>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="post-wrap">
-        <div className="posts__placeholder">
-          <div>
-            <p>Error loading posts!</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  const customPostsFound = Boolean(data?.customPosts.nodes.length);
-
-  if (!customPostsFound) {
-    return (
-      <div className="post-wrap">
-        <div className="posts__placeholder">
-          <div>
-            <p>No posts found.</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // console.log("customPosts:", data);
+  console.log("customPosts:", data);
 
   return <CustomPost data={data} />;
 }

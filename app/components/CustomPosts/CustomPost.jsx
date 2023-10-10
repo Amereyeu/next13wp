@@ -1,6 +1,6 @@
 function CustomPost({ data }) {
   return (
-    <>
+    <div className="custom-wrap">
       <ol className="custom-list">
         {data.customPosts.nodes.map((post, id) => (
           <li className="custom-list__item" key={post.id}>
@@ -13,7 +13,7 @@ function CustomPost({ data }) {
           </li>
         ))}
       </ol>
-    </>
+    </div>
   );
 }
 

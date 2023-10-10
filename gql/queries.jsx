@@ -336,8 +336,8 @@ const GET_ALL_POSTS_FROM_TAG = gql`
 
 // show all custom posts on the page
 const GET_ALL_CUSTOM_POSTS = gql`
-  query getAllCustomPosts($language: LanguageCodeFilterEnum!) {
-    customPosts(first: 3, where: { language: $language }) {
+  query getAllCustomPosts {
+    customPosts(first: 3) {
       nodes {
         id
         slug
