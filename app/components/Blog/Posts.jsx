@@ -1,6 +1,8 @@
 "use client";
+
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import { GET_ALL_POSTS } from "../../gql/queries";
+import { GET_ALL_POSTS } from "../../../gql/queries";
+import Post from "./Post";
 
 export default function Posts() {
   const { data } = useSuspenseQuery(GET_ALL_POSTS);
@@ -11,13 +13,15 @@ export default function Posts() {
     <div>
       <h3>Blog posts</h3>
 
-      {data.posts.nodes.map((post) => {
+      <Post data={data} />
+
+      {/* {data.posts.nodes.map((post) => {
         return (
           <div key={post.id}>
             <h3>{post.title}</h3>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 }
