@@ -15,12 +15,6 @@ function Navigation() {
     setIsNavOpen(!isNavOpen);
   };
 
-  const [isCzech, setIsCzech] = useState(false);
-
-  // const toggleLang = () => {
-  //   setIsCzech(!isCzech);
-  // };
-
   useEffect(() => {
     const onScroll = () => {
       setShrunk((isShrunk) => {

@@ -14,14 +14,6 @@ export default function Posts() {
       <h3>Blog posts</h3>
 
       <Post data={data} />
-
-      {/* {data.posts.nodes.map((post) => {
-        return (
-          <div key={post.id}>
-            <h3>{post.title}</h3>
-          </div>
-        );
-      })} */}
     </div>
   );
 }
