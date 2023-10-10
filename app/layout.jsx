@@ -1,7 +1,8 @@
 import { ApolloWrapper } from "../lib/apollo-wrapper";
 
+import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+
 import "./styles.scss";
 
 export const metadata = {
@@ -19,7 +20,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navbar />
+        <Navigation />
         <ApolloWrapper>{children}</ApolloWrapper>
         <Footer />
       </body>

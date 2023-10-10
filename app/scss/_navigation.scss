@@ -1,0 +1,215 @@
+.navigation-container {
+  position: fixed;
+  z-index: 990;
+  width: 100%;
+  top: 0;
+
+  @include break(320px, 991px) {
+    .navigation {
+      width: 100%;
+      padding: 1em;
+      background: rgba($color-primary, 1);
+      z-index: 49;
+      will-change: transform;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      &__toggle {
+        display: block;
+        border-radius: 5px;
+        background-color: transparent;
+        float: right;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+        padding: 8px 8px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        &.open span:first-child {
+          transform: rotate(45deg) translate(4.4px, 4.4px);
+        }
+
+        &.open span:nth-child(2) {
+          width: 0%;
+          opacity: 0;
+        }
+
+        &.open span:last-child {
+          transform: rotate(-45deg) translate(4.4px, -4.4px);
+        }
+
+        span {
+          position: relative;
+          display: block;
+          height: 2px;
+          width: 100%;
+          margin-top: 4px;
+          background-color: $color-secondary;
+          transition: all 0.25s;
+        }
+      }
+
+      &__menu {
+        height: 0;
+        overflow: hidden;
+        transition: all 0.8s ease-out;
+        z-index: 50;
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__item {
+          padding: 1.5rem 1rem;
+          font-size: 1rem;
+          color: $color-secondary;
+          text-transform: uppercase;
+          text-decoration: none;
+          width: 100%;
+          text-align: center;
+          -webkit-tap-highlight-color: $color-orange;
+
+          button {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            color: $color-white;
+            letter-spacing: 0.2rem;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            svg {
+              width: 2rem;
+              height: 2rem;
+            }
+          }
+        }
+
+        .switch-wrap {
+          width: 100%;
+
+          .switch {
+            padding: 1.5rem 1rem;
+            color: $color-secondary;
+            text-transform: uppercase;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+            background-color: transparent;
+            color: $color-white;
+            cursor: pointer;
+            -webkit-tap-highlight-color: $color-orange;
+
+            svg {
+              width: 2rem;
+              height: 2rem;
+            }
+          }
+        }
+
+        &.collapse {
+          height: 100vh;
+        }
+      }
+    }
+  }
+
+  @include break($large) {
+    .navigation__menu {
+      display: flex;
+      justify-content: flex-end;
+      background: rgba($color-primary, 0.9);
+
+      &__item {
+        display: flex;
+        align-items: center;
+        // padding: 2rem;
+        text-decoration: none;
+        transition: all 0.6s;
+
+        button {
+          outline: none;
+          border: none;
+          background-color: transparent;
+          color: $color-secondary;
+          // padding: 0.725em 0;
+          letter-spacing: 0.2rem;
+          font-size: 1.1rem;
+          text-transform: uppercase;
+          cursor: pointer;
+          padding: 2rem;
+
+          svg {
+            width: 1.6em;
+            height: 1.6em;
+          }
+        }
+
+        &:hover {
+          background: $color-orange;
+
+          button {
+            color: $color-white;
+          }
+        }
+      }
+
+      .switch {
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+        text-decoration: none;
+        transition: all 0.6s;
+        background-color: transparent;
+        color: $color-secondary;
+        // padding: 0.725em 0;
+        letter-spacing: 0.2rem;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        svg {
+          width: 1.6em;
+          height: 1.6em;
+        }
+
+          button {
+          outline: none;
+          border: none;
+          background-color: transparent;
+          color: $color-secondary;
+          // padding: 0.725em 0;
+          letter-spacing: 0.2rem;
+          font-size: 1.1rem;
+          text-transform: uppercase;
+          cursor: pointer;
+
+          svg {
+            width: 1.6em;
+            height: 1.6em;
+          }
+        }
+
+        &:hover {
+          background: $color-orange;
+          color: $color-white;
+        }
+
+        .small {
+          padding: 0.725rem 2rem !important;
+        }
+      }
+
+      .small {
+        padding: 0.725rem 2rem !important;
+      }
+    }
+
+    .navigation__toggle {
+      display: none;
+    }
+  }
+}

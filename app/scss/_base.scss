@@ -1,58 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@600&Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+$color-primary: #000;
+$color-secondary: #9a9a9a;
+$color-white: #fff;
+$color-orange: #ff3d00;
+
+$primary: "Poppins", sans-serif;
+$heading: "Big Shoulders Text", sans-serif;
+
+$small: 480px;
+$medium: 769px;
+$large: 993px;
+$xlarge: 1200px;
+
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: $color-black;
-  font-family: $primary;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-
-
-.circle {
-  width: 48px;
-  height: 48px;
-  display: inline-block;
-  position: relative;
-  margin-top: 3rem;
-}
-.circle::after,
-.circle::before {
-  content: "";
+  padding: 0;
   box-sizing: border-box;
-  width: 48px;
-  height: 48px;
-  border: 4px solid #000;
-  position: absolute;
-  left: 0;
-  top: 0;
-  animation: animcircle 2s ease-in-out infinite;
-}
-.circle::after {
-  border-color: $color-orange;
-  animation-delay: 1s;
+  font-family: $primary;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
-@keyframes animcircle {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
+:root {
+  --text: #333;
+  --bg: #fcfcfc;
+  --table: #eee;
 }
+
+html[data-theme="dark"] {
+  --bg: #2f2f2f;
+  --text: #fcfcfc;
+  --table: #3d3d3d;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.App {
+  display: grid;
+  grid-template-rows: 1fr 210px;
+  height: 100vh;
+}
+
