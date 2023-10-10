@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 // import { GiSun, GiMoon } from "react-icons/gi";
 
-// import data from "../data/nav.json";
+import data from "../../data/nav.json";
 
 function Navigation() {
   const [isShrunk, setShrunk] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-  // const [navigationData] = useState(data);
+  const [navigationData] = useState(data);
 
   const toggleNavigation = () => {
     setIsNavOpen(!isNavOpen);
@@ -60,44 +60,19 @@ function Navigation() {
         </div>
 
         <div className={`navigation__menu ${isNavOpen ? "collapse" : ""}`}>
-          {/* {navigationData.map((navItem, i) => (
+          {navigationData.map((navItem, i) => (
             <Link
-              to={navItem.to}
+              href={navItem.to}
               key={i}
               className="navigation__menu__item"
               onClick={toggleNavigation}>
               <button
                 className={`switch ${isShrunk ? "small" : ""}`}
                 aria-label={navItem.name}>
-                {lg === "EN" ? navItem.name : navItem.translation}
+                {navItem.name}
               </button>
             </Link>
-          ))} */}
-
-          <Link
-            href="/"
-            className="navigation__menu__item"
-            onClick={toggleNavigation}>
-            Home
-          </Link>
-          <Link
-            href="/blog"
-            className="navigation__menu__item"
-            onClick={toggleNavigation}>
-            Blog
-          </Link>
-          <Link
-            href="/about"
-            className="navigation__menu__item"
-            onClick={toggleNavigation}>
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="navigation__menu__item"
-            onClick={toggleNavigation}>
-            Contact
-          </Link>
+          ))}
 
           {/* <div className="switch-wrap" onClick={toggleNavigation}>
             <div

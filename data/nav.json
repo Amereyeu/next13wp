@@ -1,0 +1,22 @@
+[
+  {
+    "to": "/",
+    "name": "Home",
+    "translation": "Úvod"
+  },  
+  {
+    "to": "/blog",
+    "name": "Blog",
+    "translation": "Blog"
+  },
+  {
+    "to": "/about",
+    "name": "About",
+    "translation": "O nás"
+  },
+  {
+    "to": "/contact",
+    "name": "Contact",
+    "translation": "Kontakt"
+  }
+]
