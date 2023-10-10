@@ -2,8 +2,8 @@ import { gql } from "@apollo/client";
 
 // show all posts on the post page
 const GET_ALL_POSTS = gql`
-  query getAllPosts($language: LanguageCodeFilterEnum!) {
-    posts(first: 100, where: { language: $language }) {
+  query getAllPosts {
+    posts(first: 100) {
       nodes {
         language {
           code

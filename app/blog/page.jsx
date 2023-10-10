@@ -1,43 +1,33 @@
-import { client } from "../../lib/apollo";
-import { gql } from "@apollo/client";
+import Posts from "./Posts";
 
-export default function Blog({ posts }) {
-  return (
-    <div>
-      <h3>Blog posts</h3>
+export const dynamic = "force-dynamic";
 
-      <div className="grid">
-        {posts.map((post) => {
-          return <div key={post.id}>+++</div>;
-        })}
-      </div>
-    </div>
-  );
-}
+// import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 
-export async function getStaticProps() {
-  const GET_POSTS = gql`
-    query AllPostsQuery {
-      customPosts {
-        nodes {
-          title
-          id
-          content
-        }
-      }
-    }
-  `;
+// const GET_POSTS = gql`
+//   query AllPostsQuery {
+//     customPosts {
+//       nodes {
+//         title
+//         id
+//         content
+//       }
+//     }
+//   }
+// `;
 
-  const response = await client.query({
-    query: GET_POSTS,
-  });
-
-  const posts = response?.data?.posts?.nodes;
-
-  return {
-    props: {
-      posts,
-    },
-  };
+export default async function Blog() {
+  return <Posts />;
+  // const { data } = useSuspenseQuery(GET_POSTS);
+  //   return (
+  //     <div>
+  //       <h3>Blog posts</h3>
+  //       <div className="grid">
+  //         {data.map((post) => {
+  //           return <div key={post.id}>+++</div>;
+  //         })}
+  //       </div>
+  //     </div>
+  //   );
 }
 

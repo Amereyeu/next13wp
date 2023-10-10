@@ -1,5 +1,4 @@
-import { ApolloProvider } from "@apollo/client/react";
-import client from "../lib/apollo";
+import { ApolloWrapper } from "../lib/apollo-wrapper";
 
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -16,12 +15,12 @@ export const metadata = {
   manifest: "/site.webmanifest",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
         <Navbar />
-        <ApolloProvider client={client}>{children}</ApolloProvider>
+        <ApolloWrapper>{children}</ApolloWrapper>
         <Footer />
       </body>
     </html>
