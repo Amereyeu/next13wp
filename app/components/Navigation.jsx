@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 // import { GiSun, GiMoon } from "react-icons/gi";
 
-import data from "../../data/nav.json";
+import data from "@/data/nav.json";
 
 function Navigation() {
   const [isShrunk, setShrunk] = useState(false);

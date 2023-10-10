@@ -1,10 +1,11 @@
 "use client";
 
+import { GET_SINGLE_PAGE } from "@/gql/queries";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 
 function Single() {
-  const { data } = useSuspenseQuery({data});
-  // console.log("page:", data);
+  const { data } = useSuspenseQuery(GET_SINGLE_PAGE);
+  console.log("SINGLE-page:", data);
 
   // single page
   return (

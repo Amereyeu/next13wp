@@ -366,7 +366,7 @@ const GET_ALL_CUSTOM_POSTS = gql`
 
 // show single page
 const GET_SINGLE_PAGE = gql`
-  query singlePage($id: Int = 21, $language: LanguageCodeEnum!) {
+  query singlePage($id: Int = 21) {
     pages(where: { id: $id }) {
       nodes {
         title
@@ -377,10 +377,6 @@ const GET_SINGLE_PAGE = gql`
           image {
             sourceUrl
           }
-        }
-        translation(language: $language) {
-          content
-          title
         }
       }
     }
