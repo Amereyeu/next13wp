@@ -3,7 +3,7 @@ import { gql } from "@apollo/client";
 // show all posts on the post page
 const GET_ALL_POSTS = gql`
   query getAllPosts {
-    posts(first: 10) {
+    posts(first: 9) {
       nodes {
         language {
           code

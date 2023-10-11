@@ -1,154 +1,31 @@
 // post detail page
 .detail {
-  margin: 5rem auto;
-  display: block;
-  width: 90%;
+  // max-width: 1000px;
 
-  @include break($medium) {
-    margin: 7rem auto 4rem;
-  }
-
-  @include break(1000px) {
-    max-width: 1000px;
-  }
-
-  &__featured-image {
-    background-size: cover;
+  &__header {
+    text-align: center;
+    color: #fff;
+    padding: 30vh 20px 20vh;
     position: relative;
-    border: 5px solid white;
-    -webkit-box-shadow: 0 0 4px $color-primary;
-    box-shadow: 0 0 4px $color-primary;
-    overflow: hidden;
-
-    height: 300px;
-    width: 100%;
-    display: grid;
-    place-content: center;
-    margin-bottom: 0.5rem;
+    background-color: $color-orange;
 
     &__title {
-      background: transparent;
-      color: $color-secondary;
-      text-align: center;
-      font-size: 1.5rem;
+      color: $color-white;
       font-family: $heading;
-      font-weight: 400;
-      padding: 1rem;
-      background: rgba($color-primary, 0.6);
-
-      @include break($medium) {
-        font-size: 2em;
-      }
-
-      @include break($large) {
-        font-size: 2.25em;
-      }
-    }
-  }
-
-  &__info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 0 1rem;
-
-    @include break($medium) {
-      margin: 0 2rem 1rem;
-    }
-
-    &__left {
-      display: flex;
-      align-items: center;
-
-      &__image {
-        border: 1px solid var(--text);
-        border-radius: 100%;
-        margin-right: 3px;
-      }
-
-      &__author,
-      &__date,
-      &__comments {
-        margin-right: 0.5rem;
-        display: flex;
-        align-items: center;
-
-        svg {
-          margin-right: 3px;
-          width: 13px;
-          height: 13px;
-        }
-
-        span {
-          font-size: 13px;
-          margin-right: 3px;
-          padding-top: 2px;
-        }
-      }
-
-      &__author {
-        text-transform: uppercase;
-      }
-
-      &__comments {
-        span:nth-of-type(1) {
-          display: none;
-
-          @include break($medium) {
-            display: block;
-          }
-        }
-      }
-    }
-
-    &__right {
-      display: flex;
-
-      &__category {
-        ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          align-items: center;
-
-          li:first-child {
-            margin-right: 4px;
-            font-size: 12px;
-          }
-
-          span {
-            display: none;
-
-            @include break($medium) {
-              display: block;
-            }
-          }
-        }
-
-        &__pill {
-          background: var(--bg);
-          margin: 8px 2px;
-          color: var(--text);
-          padding: 4px 10px;
-          display: inline-flex;
-          border-radius: 10px;
-          font-size: 0.5rem;
-          border: 1px solid var(--text);
-          text-decoration: none;
-          transition: all 0.6s;
-
-          &:hover {
-            background: var(--text);
-            color: var(--bg);
-          }
-        }
-      }
+      font-weight: 800;
+      line-height: 1.3em;
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: -0.015em;
+      font-size: calc(12px + 5vw);
     }
   }
 
   &__content {
     display: flow-root;
+    max-width: 900px;
+    margin: 3rem auto;
 
     h1,
     h2,
@@ -189,10 +66,61 @@
     }
   }
 
+  &__categories {
+    margin-top: 120px;
+    padding: 40px;
+    position: relative;
+
+    &__header {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-align: left;
+      z-index: 10;
+      position: relative;
+      line-height: 0.6em;
+      pointer-events: none;
+      font-family: $heading;
+    }
+
+    &__content {
+      background-color: $color-orange;
+      padding: 50px;
+
+      &__link {
+        font-size: 3.5rem;
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: $heading;
+      }
+
+      &__date {
+        position: absolute;
+        right: 0;
+        padding-right: 40px;
+        bottom: -18px;
+        font-size: 3.5rem;
+        font-family: $heading;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+
+        li {
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+
+
+
   &__button {
     background: var(--bg);
     border: none;
-    margin: 2rem auto 4rem;
+    margin: 5rem auto;
     display: inherit;
 
     a {
