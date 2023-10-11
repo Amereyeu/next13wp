@@ -1,15 +1,13 @@
+import ContactInfo from "../components/Contact/ContactInfo";
 import Faqs from "../components/Faq/Faqs";
 
 function Contact() {
   return (
     <div className="contact-wrap">
       <div className="contact">
-        // todo: přidat kontakty
-
-        <div className="contact__right">
-          // todo: přidat formulář
-        </div>
-
+        <ContactInfo />
+        // todo: přidat formulář
+        <div className="contact__right"></div>
       </div>
 
       <Faqs />

@@ -385,7 +385,7 @@ const GET_SINGLE_PAGE = gql`
 
 // show contact info on page
 const GET_CONTACT_PAGE = gql`
-  query singlePage($id: Int = 77, $language: LanguageCodeEnum!) {
+  query singlePage($id: Int = 77) {
     pages(where: { id: $id }) {
       nodes {
         title
@@ -400,10 +400,6 @@ const GET_CONTACT_PAGE = gql`
           info2
           instagram
           phone
-        }
-        translation(language: $language) {
-          content
-          title
         }
         acfpages {
           pageVisible
