@@ -1,22 +1,11 @@
-"use client";
-
-import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-
 import Link from "next/link";
 // import Comments from "./Comments";
 import defaultImage from "@/public/img/hero.png";
 import { FaRegComments, FaRegClock, FaRegUser } from "react-icons/fa";
 import { format } from "date-fns";
-import { HashLink } from "react-router-hash-link";
-import { GET_POST_BY_SLUG } from "@/gql/queries";
 
-function PostDetail({ params }) {
-  const { data } = useSuspenseQuery(GET_POST_BY_SLUG, {
-    variables: {
-      id: params.slug,
-    },
-  });
 
+function PostDetail({ data }) {
   return (
     <div className="detail">
       <div
