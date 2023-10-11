@@ -1,3 +1,7 @@
+"use client";
+
+import { ToastContainer } from "react-toastify";
+import ContactForm from "../components/Contact/ContactForm";
 import ContactInfo from "../components/Contact/ContactInfo";
 import Faqs from "../components/Faq/Faqs";
 
@@ -6,8 +10,10 @@ function Contact() {
     <div className="contact-wrap">
       <div className="contact">
         <ContactInfo />
-        // todo: přidat formulář
-        <div className="contact__right"></div>
+
+        <div className="contact__right">
+          <ContactForm />
+        </div>
       </div>
 
       <Faqs />
@@ -20,9 +26,12 @@ function Contact() {
         allowFullScreen=""
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"></iframe>
+
+      <ToastContainer />
     </div>
   );
 }
 
 export default Contact;
+
 

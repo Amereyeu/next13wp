@@ -1,7 +1,9 @@
+import Single from "../components/Single";
+
 function About() {
   return (
     <main>
-      <div>About</div>
+      <Single />
     </main>
   );
 }
