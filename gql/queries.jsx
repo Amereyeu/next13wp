@@ -76,7 +76,7 @@ const GET_ALL_POSTS = gql`
 
 // single post - detail page
 const GET_POST_BY_SLUG = gql`
-  query getPostBySlug($id: ID!, $language: LanguageCodeEnum = EN) {
+  query getPostBySlug($id: ID!) {
     post(id: $id, idType: SLUG) {
       id
       slug
@@ -117,13 +117,6 @@ const GET_POST_BY_SLUG = gql`
             slug
           }
         }
-      }
-      translation(language: $language) {
-        id
-        slug
-        title
-        excerpt
-        content
       }
       comments(where: { order: ASC }) {
         edges {
