@@ -3,9 +3,13 @@ import Faqs from "../components/Faq/Faqs";
 function Contact() {
   return (
     <div className="contact-wrap">
-
       <div className="contact">
-// todo: přidat formulář
+        // todo: přidat kontakty
+
+        <div className="contact__right">
+          // todo: přidat formulář
+        </div>
+
       </div>
 
       <Faqs />
@@ -23,5 +27,4 @@ function Contact() {
 }
 
 export default Contact;
-
 
