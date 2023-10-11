@@ -195,14 +195,14 @@
   justify-content: space-between;
   max-width: 1000px;
   margin: 0 auto;
-
+  
   .item {
     width: 100%;
     display: grid;
     place-items: center;
     background: #acbfcc;
     padding: 20vh 0;
-
+    
     @include break($medium) {
       width: 50%;
     }
@@ -221,13 +221,14 @@
         }
       }
     }
-
+    
     h2 {
       text-transform: uppercase;
       text-align: center;
       padding: 4rem 2rem;
-
+      
       a {
+        font-family: $heading;
         font-size: 3rem;
         text-decoration: none;
         color: #000;
