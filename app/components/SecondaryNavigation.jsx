@@ -1,7 +1,9 @@
+"use state"
+
 import { useState } from "react";
 import { RiArrowUpSLine, RiHome4Fill } from "react-icons/ri";
-import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import Link from "next/link"
 
 function SecondaryNavigation() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -32,23 +34,23 @@ function SecondaryNavigation() {
       <nav>
         <ul className={`${isNavOpen ? "is-visible" : ""}`}>
           <li>
-            <HashLink
-              to="/#top"
-              smooth
+            <Link
+              href="/#top"
+              scroll={true}
               className="secondary-nav__item"
               onClick={toggleNavigation}>
               <RiHome4Fill />
-            </HashLink>
+            </Link>
           </li>
 
           <li>
-            <HashLink
-              to="#top"
+            <Link
+              href="#top"
               smooth
               className="secondary-nav__item"
               onClick={toggleNavigation}>
               <RiArrowUpSLine />
-            </HashLink>
+            </Link>
           </li>
         </ul>
       </nav>

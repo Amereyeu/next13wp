@@ -2,12 +2,13 @@
 
 import { ApolloWrapper } from "../lib/apollo-wrapper";
 
-import Navigation from "./components/Navigation";
+import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer";
 
 import "./styles.scss";
 
 import { useEffect, useState } from "react";
+import SecondaryNavigation from "./components/SecondaryNavigation";
 
 export default function RootLayout({ children }) {
   const [theme, setTheme] = useState(
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         <Navigation handleThemeChange={handleThemeChange} theme={theme} />
         <ApolloWrapper>{children}</ApolloWrapper>
         <Footer />
+        <SecondaryNavigation />
       </body>
     </html>
   );

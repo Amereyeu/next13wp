@@ -6,7 +6,7 @@ import { format } from "date-fns";
 
 function PostDetail({ data }) {
   return (
-    <div className="detail">
+    <div className="detail" id="top">
       <div className="detail__header">
         <h1 className="detail__header__title">{data.post.title}</h1>
       </div>
