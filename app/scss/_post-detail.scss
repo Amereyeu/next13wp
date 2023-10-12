@@ -1,10 +1,13 @@
-// post detail page
+//
+// blog post detail page
+//
+
 .detail {
   // max-width: 1000px;
 
   &__header {
     text-align: center;
-    color: #fff;
+    color: $color-white;
     padding: 30vh 20px 20vh;
     position: relative;
     background-color: $color-orange;
@@ -25,7 +28,13 @@
   &__content {
     display: flow-root;
     max-width: 900px;
-    margin: 3rem auto;
+    margin: 3rem auto 0;
+    padding: 1rem;
+
+    @include break($medium) {
+      margin: 3rem auto;
+    }
+    
 
     h1,
     h2,
@@ -67,12 +76,15 @@
   }
 
   &__categories {
-    margin-top: 120px;
     padding: 40px;
     position: relative;
 
+    @include break($medium) {
+      margin-top: 120px;
+    }
+
     &__header {
-      font-size: 3.5rem;
+      font-size: clamp(1.5rem, 0.7727rem + 3.6364vw, 3.5rem);
       font-weight: 800;
       letter-spacing: -0.02em;
       text-align: left;
@@ -88,9 +100,9 @@
       padding: 50px;
 
       &__link {
-        font-size: 3rem;
+        font-size: clamp(1.5rem, 0.9545rem + 2.7273vw, 3rem);
         text-decoration: none;
-        color: #fff;
+        color: $color-white;
         text-transform: uppercase;
         font-family: $heading;
         position: relative;
@@ -103,13 +115,13 @@
           height: 2px;
           bottom: -4px;
           left: 0;
-          background-color: #fff;
+          background-color: $color-white;
           transform: scaleX(0);
           transition: transform 0.6s ease;
         }
 
         &:hover {
-          color: #fff;
+          color: $color-white;
 
           &::before {
             transform: scaleX(1);
@@ -120,15 +132,16 @@
       &__date {
         position: absolute;
         right: 0;
-        padding-right: 40px;
-        bottom: -18px;
-        font-size: 3.5rem;
+        padding-right: 50px;
+        bottom: 34px;
+        font-size: clamp(1.5rem, 0.7727rem + 3.6364vw, 3.5rem);
         font-family: $heading;
       }
 
       ul {
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
 
         li {
           margin-right: 2rem;

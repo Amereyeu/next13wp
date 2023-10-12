@@ -1,4 +1,4 @@
-// 
+//
 // main navigation on page
 //
 
@@ -150,6 +150,11 @@
             width: 1.6em;
             height: 1.6em;
           }
+
+          &.active {
+            background: $color-orange;
+            color: $color-white;
+          }
         }
 
         &:hover {
@@ -169,7 +174,6 @@
         transition: all 0.6s;
         background-color: transparent;
         color: $color-secondary;
-        // padding: 0.725em 0;
         letter-spacing: 0.2rem;
         font-size: 1.1rem;
         text-transform: uppercase;
@@ -180,12 +184,11 @@
           height: 1.6em;
         }
 
-          button {
+        button {
           outline: none;
           border: none;
           background-color: transparent;
           color: $color-secondary;
-          // padding: 0.725em 0;
           letter-spacing: 0.2rem;
           font-size: 1.1rem;
           text-transform: uppercase;
@@ -218,7 +221,7 @@
   }
 }
 
-// 
+//
 // secondary navigation
 //
 

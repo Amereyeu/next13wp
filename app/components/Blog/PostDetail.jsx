@@ -3,8 +3,11 @@ import Link from "next/link";
 import defaultImage from "@/public/img/hero.png";
 import { FaRegComments, FaRegClock, FaRegUser } from "react-icons/fa";
 import { format } from "date-fns";
+import { useRouter } from "next/navigation";
 
 function PostDetail({ data }) {
+  const router = useRouter();
+
   return (
     <div className="detail" id="top">
       <div className="detail__header">
@@ -43,9 +46,9 @@ function PostDetail({ data }) {
 
       <button
         className="detail__button"
-        // onClick={() => navigate(-1)}
+        onClick={() => router.back()}
         aria-label="Back to articles">
-        <Link href="/blog">Back to articles</Link>
+        Back to articles
       </button>
 
       {/* <div className="detail__info__left__comments">

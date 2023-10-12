@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import "./styles.scss";
 
 import { useEffect, useState } from "react";
-import SecondaryNavigation from "./components/SecondaryNavigation";
+import SecondaryNavigation from "./components/Navigation/SecondaryNavigation";
 
 export default function RootLayout({ children }) {
   const [theme, setTheme] = useState(

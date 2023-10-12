@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { GiSun, GiMoon } from "react-icons/gi";
 
 import data from "@/data/nav.json";
@@ -10,6 +11,7 @@ function Navigation({ handleThemeChange, theme }) {
   const [isShrunk, setShrunk] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [navigationData] = useState(data);
+  const pathname = usePathname();
 
   const toggleNavigation = () => {
     setIsNavOpen(!isNavOpen);
@@ -61,7 +63,9 @@ function Navigation({ handleThemeChange, theme }) {
               className="navigation__menu__item"
               onClick={toggleNavigation}>
               <button
-                className={`switch ${isShrunk ? "small" : ""}`}
+                className={`switch ${isShrunk ? "small" : ""} ${
+                  pathname === navItem.to ? "active" : ""
+                }`}
                 aria-label={navItem.name}>
                 {navItem.name}
               </button>

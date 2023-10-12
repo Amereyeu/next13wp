@@ -1,3 +1,6 @@
+//
+// scss mixins
+//
 
 @mixin break($breakpoint...) {
   @if length($breakpoint) ==1 {
@@ -10,8 +13,6 @@
     }
   }
 }
-
-
 
 @mixin states($color: $default) {
   border-color: $color;
@@ -29,5 +30,3 @@
     border-color: darken($color, 10%);
   }
 }
-
-
