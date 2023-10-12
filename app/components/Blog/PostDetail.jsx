@@ -48,7 +48,7 @@ function PostDetail({ data }) {
         className="detail__button"
         onClick={() => router.back()}
         aria-label="Back to articles">
-        Back to articles
+        <span>Back to articles</span>
       </button>
 
       {/* <div className="detail__info__left__comments">
