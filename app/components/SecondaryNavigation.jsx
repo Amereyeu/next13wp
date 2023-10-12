@@ -36,7 +36,6 @@ function SecondaryNavigation() {
           <li>
             <Link
               href="/#top"
-              scroll={true}
               className="secondary-nav__item"
               onClick={toggleNavigation}>
               <RiHome4Fill />
@@ -46,7 +45,6 @@ function SecondaryNavigation() {
           <li>
             <Link
               href="#top"
-              smooth
               className="secondary-nav__item"
               onClick={toggleNavigation}>
               <RiArrowUpSLine />

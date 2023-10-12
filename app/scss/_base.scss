@@ -39,6 +39,11 @@ body {
   color: var(--text);
 }
 
+html {
+    --scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
+}
+
 .App {
   display: grid;
   grid-template-rows: 1fr 210px;
