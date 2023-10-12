@@ -1,3 +1,5 @@
+"use client";
+
 import { ApolloWrapper } from "../lib/apollo-wrapper";
 
 import Navigation from "./components/Navigation";
@@ -5,26 +7,31 @@ import Footer from "./components/Footer";
 
 import "./styles.scss";
 
-export const metadata = {
-  title: "Next13 demo",
-  description: "next13 + scss",
-  icons: {
-    icon: ["/favicon.ico?v=1"],
-    apple: ["/apple-touch-icon.png?v=4"],
-    shortcut: ["/apple-touch-icon.png"],
-  },
-  manifest: "/site.webmanifest",
-};
+import { useEffect, useState } from "react";
 
-export default async function RootLayout({ children }) {
+export default function RootLayout({ children }) {
+  const [theme, setTheme] = useState(
+    JSON.parse(localStorage.getItem("theme")) || "light"
+  );
+
+  const handleThemeChange = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
   return (
     <html lang="en">
       <body>
-        <Navigation />
+        <Navigation handleThemeChange={handleThemeChange} theme={theme} />
         <ApolloWrapper>{children}</ApolloWrapper>
         <Footer />
       </body>
     </html>
   );
 }
+
 

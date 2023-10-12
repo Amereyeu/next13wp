@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-// import { GiSun, GiMoon } from "react-icons/gi";
+import { GiSun, GiMoon } from "react-icons/gi";
 
 import data from "@/data/nav.json";
 
-function Navigation() {
+function Navigation({ handleThemeChange, theme }) {
   const [isShrunk, setShrunk] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [navigationData] = useState(data);
@@ -68,14 +68,14 @@ function Navigation() {
             </Link>
           ))}
 
-          {/* <div className="switch-wrap" onClick={toggleNavigation}>
+          <div className="switch-wrap" onClick={toggleNavigation}>
             <div
               onClick={handleThemeChange}
               aria-label="Theme Switch"
               className={`switch ${isShrunk ? "small" : ""}`}>
               {theme === "light" ? <GiMoon /> : <GiSun />}
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

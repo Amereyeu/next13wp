@@ -1,3 +1,7 @@
+// 
+// main navigation on page
+//
+
 .navigation-container {
   position: fixed;
   z-index: 990;
@@ -210,6 +214,116 @@
 
     .navigation__toggle {
       display: none;
+    }
+  }
+}
+
+// 
+// secondary navigation
+//
+
+.secondary-nav {
+  height: 170px;
+  width: 50px;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  overflow: hidden;
+  z-index: 33;
+
+  &__trigger {
+    transition: all 0.6s;
+    z-index: 33;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    bottom: 2rem;
+    right: 2rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: $color-primary;
+    color: $color-secondary;
+    opacity: 1;
+    border: 1px solid #fff;
+
+    &::before,
+    &::after {
+      transition: transform 0.3s ease-out;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 20px;
+      margin-left: -10px;
+      margin-top: -1px;
+      border: 1px solid $color-secondary;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      height: 20px;
+      margin-left: -1px;
+      margin-top: -10px;
+      border: 1px solid $color-secondary;
+    }
+
+    &.is-open {
+      &::before,
+      &::after {
+        transition: transform 0.6s ease-out;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  ul {
+    width: 50px;
+    right: 2rem;
+    bottom: 80px;
+    visibility: hidden;
+    list-style: none;
+    transform: translateY(100%);
+    transition: all 0.6s ease-out;
+    opacity: 0;
+
+    &.is-visible {
+      visibility: visible;
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: $color-primary;
+    align-items: center;
+    justify-content: center;
+    color: $color-secondary;
+    cursor: pointer;
+    border: 1px solid #fff;
+
+    svg {
+      width: 2em;
+      height: 2rem;
     }
   }
 }
