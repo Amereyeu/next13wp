@@ -30,7 +30,7 @@ function PostDetail({ data }) {
                 <li key={cat.node.id}>
                   <Link
                     className="detail__categories__content__link"
-                    href={`/category/${cat.node.slug}`}>
+                    href={`/blog/category/${cat.node.slug}`}>
                     {cat.node.name}
                   </Link>
                 </li>

@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-function Post({ data }) {
+function CategoryPost({ data }) {
   return (
     <>
       {data ? (
         <div className="container" id="top">
-          {data.posts.nodes.map((post) => (
+          {data.category.posts.nodes.map((post) => (
             <div className="item" key={post.id}>
               <h2>
                 <Link href={`/blog/${post.slug}`}>{post.title}</Link>
@@ -22,5 +22,5 @@ function Post({ data }) {
   );
 }
 
-export default Post;
+export default CategoryPost;
 

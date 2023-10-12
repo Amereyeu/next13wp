@@ -6,7 +6,7 @@ export default function NotFound() {
       <h2 className="text-3xl">There was a problem.</h2>
       <p>We could not find the category you were looking for.</p>
       <p>
-        Go back to the <Link href="/blog">blog</Link>.
+        Go back to the <Link href="/blog/category">categories</Link>.
       </p>
     </main>
   );

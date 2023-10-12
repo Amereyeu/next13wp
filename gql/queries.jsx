@@ -402,10 +402,10 @@ const GET_CONTACT_PAGE = gql`
   }
 `;
 
-//show all categories based on language
+//show all categories 
 const GET_ALL_CATEGORIES = gql`
-  query allCategories($language: LanguageCodeFilterEnum!) {
-    categories(where: { language: $language }) {
+  query allCategories {
+    categories {
       nodes {
         id
         name
