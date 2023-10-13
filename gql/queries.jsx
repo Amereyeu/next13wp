@@ -405,7 +405,7 @@ const GET_CONTACT_PAGE = gql`
 //show all categories 
 const GET_ALL_CATEGORIES = gql`
   query allCategories {
-    categories {
+    categories(first: 22) {
       nodes {
         id
         name
