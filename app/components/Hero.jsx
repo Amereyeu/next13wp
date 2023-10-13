@@ -1,4 +1,4 @@
-function Hero() {
+export default function Hero() {
   return (
     <div className="hero">
       <h1>React In The Front</h1>
@@ -7,5 +7,4 @@ function Hero() {
   );
 }
 
-export default Hero;
 

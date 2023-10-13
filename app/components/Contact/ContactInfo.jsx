@@ -13,7 +13,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 
-function ContactInfo() {
+export default function ContactInfo() {
   const { data } = useSuspenseQuery(GET_CONTACT_PAGE);
 
   console.log("contactInfo:", data);
@@ -105,5 +105,4 @@ function ContactInfo() {
   );
 }
 
-export default ContactInfo;
 

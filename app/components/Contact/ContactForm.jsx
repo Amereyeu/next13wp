@@ -3,7 +3,7 @@ import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 
-function ContactForm() {
+export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
@@ -118,5 +118,4 @@ function ContactForm() {
   );
 }
 
-export default ContactForm;
 

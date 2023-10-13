@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function Post({ data }) {
+export default function Post({ data }) {
   return (
     <>
       {data ? (
@@ -22,5 +22,4 @@ function Post({ data }) {
   );
 }
 
-export default Post;
 

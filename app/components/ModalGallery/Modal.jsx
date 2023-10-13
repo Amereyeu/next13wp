@@ -1,11 +1,11 @@
 import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 
-const Modal = ({
+export default function Modal({
   clickedImg,
   setClickedImg,
   // handelRotationRight,
   // handelRotationLeft,
-}) => {
+}) {
   const handleClick = (e) => {
     if (e.target.classList.contains("dismiss")) {
       setClickedImg(null);
@@ -44,7 +44,5 @@ const Modal = ({
       </div>
     </div>
   );
-};
-
-export default Modal;
+}
 

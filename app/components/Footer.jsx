@@ -7,7 +7,7 @@ import {
   FaRegEnvelope,
 } from "react-icons/fa";
 
-function Footer() {
+export default function Footer() {
   const today = new Date();
 
   return (
@@ -64,5 +64,4 @@ function Footer() {
   );
 }
 
-export default Footer;
 

@@ -3,7 +3,7 @@
 import { GET_SINGLE_PAGE } from "@/gql/queries";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 
-function Single() {
+export default function Single() {
   const { data } = useSuspenseQuery(GET_SINGLE_PAGE);
   console.log("SINGLE-page:", data);
 
@@ -36,5 +36,4 @@ function Single() {
   );
 }
 
-export default Single;
 

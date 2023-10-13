@@ -4,7 +4,7 @@ import { useState } from "react";
 import data from "@/data/images.json";
 import Modal from "./Modal";
 
-function ModalGallery() {
+export default function ModalGallery() {
   const [clickedImg, setClickedImg] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(null);
 
@@ -82,5 +82,4 @@ function ModalGallery() {
   );
 }
 
-export default ModalGallery;
 

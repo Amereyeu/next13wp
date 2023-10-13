@@ -5,7 +5,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { GET_POST_BY_SLUG } from "@/gql/queries";
 import PostDetail from "@/app/components/Blog/PostDetail";
 
-function PostBySlug({ params }) {
+export default function PostBySlug({ params }) {
   const { data } = useSuspenseQuery(GET_POST_BY_SLUG, {
     variables: {
       id: params.slug,
@@ -14,5 +14,4 @@ function PostBySlug({ params }) {
 
   return <PostDetail data={data} />;
 }
-export default PostBySlug;
 

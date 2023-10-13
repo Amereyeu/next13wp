@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import { RiArrowUpSLine, RiHome4Fill } from "react-icons/ri";
-import { HashLink } from "react-router-hash-link";
 import Link from "next/link"
 
-function SecondaryNavigation() {
+export default function SecondaryNavigation() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNavigation = () => {
@@ -56,6 +55,5 @@ function SecondaryNavigation() {
   );
 }
 
-export default SecondaryNavigation;
 
 

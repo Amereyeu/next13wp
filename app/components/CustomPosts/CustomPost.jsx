@@ -1,4 +1,4 @@
-function CustomPost({ data }) {
+export default function CustomPost({ data }) {
   return (
     <div className="custom-wrap">
       <ol className="custom-list">
@@ -17,5 +17,4 @@ function CustomPost({ data }) {
   );
 }
 
-export default CustomPost;
 

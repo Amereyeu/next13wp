@@ -7,7 +7,7 @@ import { GiSun, GiMoon } from "react-icons/gi";
 
 import data from "@/data/nav.json";
 
-function Navigation({ handleThemeChange, theme }) {
+export default function Navigation({ handleThemeChange, theme }) {
   const [isShrunk, setShrunk] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [navigationData] = useState(data);
@@ -86,4 +86,3 @@ function Navigation({ handleThemeChange, theme }) {
   );
 }
 
-export default Navigation;

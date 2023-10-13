@@ -1,6 +1,6 @@
 import React from "react";
 
-function SingleFaq({ faq, index, toggleFAQ }) {
+export default function SingleFaq({ faq, index, toggleFAQ }) {
   return (
     <div
       className={"faq " + (faq.open ? "open" : "")}
@@ -14,5 +14,4 @@ function SingleFaq({ faq, index, toggleFAQ }) {
   );
 }
 
-export default SingleFaq;
 

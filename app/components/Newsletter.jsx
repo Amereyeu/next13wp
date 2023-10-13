@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import emailjs from "emailjs-com";
 
-function Newsletter() {
+export default function Newsletter() {
   const [email, setEmail] = useState("");
   const {
     register,
@@ -83,4 +83,4 @@ function Newsletter() {
   );
 }
 
-export default Newsletter;
+
