@@ -5,7 +5,7 @@ import ContactForm from "../components/Contact/ContactForm";
 import ContactInfo from "../components/Contact/ContactInfo";
 import Faqs from "../components/Faq/Faqs";
 
-function Contact() {
+export default function Contact() {
   return (
     <div className="contact-wrap">
       <div className="contact">
@@ -31,7 +31,4 @@ function Contact() {
     </div>
   );
 }
-
-export default Contact;
-
 

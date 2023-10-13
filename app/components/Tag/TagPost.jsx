@@ -13,7 +13,7 @@ export default function TagPost({ data }) {
             </div>
           ))}
         </div>
-      ) : (
+      ) : ( 
         <div id="top">
           <div className="noposts">
             <h2>No posts</h2>

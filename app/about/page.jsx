@@ -1,6 +1,6 @@
 import Single from "../components/Single";
 
-function About() {
+export default function About() {
   return (
     <main>
       <Single />
@@ -8,5 +8,4 @@ function About() {
   );
 }
 
-export default About;
 

@@ -9,12 +9,6 @@ export default function Posts() {
 
   console.log("data", data);
 
-  return (
-    <div>
-      <h3>Blog posts</h3>
-
-      <Post data={data} />
-    </div>
-  );
+  return <Post data={data} />;
 }
 
