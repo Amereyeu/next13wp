@@ -10,20 +10,17 @@ export default function CategoryList() {
   console.log("All categories:", data);
 
   return (
-    <div className="categorylist-wrap">
-      <ul className="categorylist">
-        {data.categories.nodes.map((category) => (
-          <li className="categorylist__item" key={category.id}>
-            <Link
-              className="categorylist__item__link"
-              href={`/blog/category/${category.slug}`}>
+    <div className="container" id="top">
+      {data.categories.nodes.map((category) => (
+        <div className="item" key={category.id}>
+          <h2>
+            <Link href={`/blog/category/${category.slug}`}>
               {category.name}
             </Link>
-          </li>
-        ))}
-      </ul>
+          </h2>
+        </div>
+      ))}
     </div>
   );
 }
-
 

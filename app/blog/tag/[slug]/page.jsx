@@ -20,7 +20,7 @@ export default function TagBySlug({ params }) {
       <TagPost data={data} />
 
       {/* load more button */}
-      {data.tag.posts.pageInfo.hasNextPage === true && (
+      {/* {data.tag.posts.pageInfo.hasNextPage === true && (
         <button
           className="load-more__button"
           onClick={() => {
@@ -39,7 +39,7 @@ export default function TagBySlug({ params }) {
           }}>
           <a>Load more posts</a>
         </button>
-      )}
+      )} */}
     </>
   );
 }

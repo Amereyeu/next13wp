@@ -10,18 +10,14 @@ export default function TagList() {
   console.log("All tags:", data);
 
   return (
-    <div className="taglist-wrap">
-      <ul className="taglist">
-        {data.tags.edges.map((tag) => (
-          <li className="taglist__item" key={tag.node.tagId}>
-            <Link
-              className="taglist__item__link"
-              href={`/blog/tag/${tag.node.slug}`}>
-              {tag.node.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div className="container" id="top">
+      {data.tags.edges.map((tag) => (
+        <div className="item" key={tag.node.tagId}>
+          <h2>
+            <Link href={`/blog/tag/${tag.node.slug}`}>{tag.node.name}</Link>
+          </h2>
+        </div>
+      ))}
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-function CategoryPost({ data }) {
+export default function CategoryPost({ data }) {
   return (
     <>
-      {data ? (
+      {data.category.posts.nodes.length > 0 ? (
         <div className="container" id="top">
           {data.category.posts.nodes.map((post) => (
             <div className="item" key={post.id}>
@@ -14,13 +14,13 @@ function CategoryPost({ data }) {
           ))}
         </div>
       ) : (
-        <div className="container" id="top">
-          <h2>No posts</h2>
+        <div id="top">
+          <div className="noposts">
+            <h2>No posts</h2>
+          </div>
         </div>
       )}
     </>
   );
 }
-
-export default CategoryPost;
 
