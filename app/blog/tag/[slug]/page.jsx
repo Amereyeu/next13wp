@@ -2,36 +2,36 @@
 
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 
-import { GET_ALL_POSTS_FROM_CATEGORY } from "@/gql/queries";
-import CategoryPost from "@/app/components/Category/CategoryPost";
+import { GET_ALL_POSTS_FROM_TAG } from "@/gql/queries";
+import TagPost from "@/app/components/Tag/TagPost";
 
-export default function CategoryBySlug({ params }) {
-  const { data, fetchMore } = useSuspenseQuery(GET_ALL_POSTS_FROM_CATEGORY, {
+export default function TagBySlug({ params }) {
+  const { data, fetchMore } = useSuspenseQuery(GET_ALL_POSTS_FROM_TAG, {
     variables: {
       id: params.slug,
       after: null,
     },
   });
 
-  console.log("categoryPost:", data);
+  console.log("tagPost:", data);
 
   return (
     <>
-      <CategoryPost data={data} />
-      
+      <TagPost data={data} />
+
       {/* load more button */}
-      {data.category.posts.pageInfo.hasNextPage === true && (
+      {data.tag.posts.pageInfo.hasNextPage === true && (
         <button
           className="load-more__button"
           onClick={() => {
-            const { endCursor } = data.category.posts.pageInfo;
+            const { endCursor } = data.tag.posts.pageInfo;
 
             fetchMore({
               variables: { after: endCursor },
               updateQuery: (prevResult, { fetchMoreResult }) => {
-                fetchMoreResult.category.posts.nodes = [
-                  ...prevResult.category.posts.nodes,
-                  ...fetchMoreResult.category.posts.nodes,
+                fetchMoreResult.tag.posts.nodes = [
+                  ...prevResult.tag.posts.nodes,
+                  ...fetchMoreResult.tag.posts.nodes,
                 ];
                 return fetchMoreResult;
               },
@@ -43,4 +43,6 @@ export default function CategoryBySlug({ params }) {
     </>
   );
 }
+
+
 

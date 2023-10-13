@@ -190,7 +190,7 @@ const GET_ALL_POSTS_FROM_CATEGORY = gql`
         code
         slug
       }
-      posts(first: 5, after: $after) {
+      posts(first: 6, after: $after) {
         nodes {
           id
           slug
@@ -257,7 +257,7 @@ const GET_ALL_POSTS_FROM_TAG = gql`
     tag(id: $id, idType: SLUG) {
       name
       id
-      posts(first: 5, after: $after) {
+      posts(first: 6, after: $after) {
         nodes {
           id
           slug
@@ -312,15 +312,6 @@ const GET_ALL_POSTS_FROM_TAG = gql`
         pageInfo {
           endCursor
           hasNextPage
-        }
-      }
-    }
-    tags {
-      edges {
-        node {
-          id
-          name
-          slug
         }
       }
     }
