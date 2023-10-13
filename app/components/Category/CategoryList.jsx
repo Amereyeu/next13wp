@@ -4,7 +4,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { GET_ALL_CATEGORIES } from "@/gql/queries";
 import Link from "next/link";
 
-function CategoryList() {
+export default function CategoryList() {
   const { data } = useSuspenseQuery(GET_ALL_CATEGORIES);
 
   console.log("All categories:", data);
@@ -26,5 +26,4 @@ function CategoryList() {
   );
 }
 
-export default CategoryList;
 

@@ -415,6 +415,21 @@ const GET_ALL_CATEGORIES = gql`
   }
 `;
 
+//show all tags 
+const GET_ALL_TAGS = gql`
+  query allTags {
+    tags(first: 22) {
+      edges {
+        node {
+          slug
+          tagId
+          name
+        }
+      }
+    }
+  }
+`;
+
 
 const LOGIN_USER = gql`
   mutation LoginUser($password: String!, $username: String!) {
@@ -442,8 +457,11 @@ export {
   GET_SINGLE_PAGE,
   GET_CONTACT_PAGE,
   GET_ALL_CATEGORIES,
+  GET_ALL_TAGS,
   LOGIN_USER
 };
+
+
 
 
 

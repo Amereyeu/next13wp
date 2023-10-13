@@ -1,19 +1,22 @@
-import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
+"use client";
 
-function taglist({ tags }) {
+import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+import { GET_ALL_TAGS } from "@/gql/queries";
+import Link from "next/link";
+
+export default function TagList() {
+  const { data } = useSuspenseQuery(GET_ALL_TAGS);
+
+  console.log("All tags:", data);
+
   return (
     <div className="taglist-wrap">
       <ul className="taglist">
-        <li className="taglist__item">
-          <HashLink smooth className="taglist__item__link" to="/#posts">
-            ALL
-          </HashLink>
-        </li>
-
-        {tags.edges.map((tag) => (
+        {tags.edges.node.map((tag) => (
           <li className="taglist__item" key={tag.node.id}>
-            <Link className="taglist__item__link" to={`/tag/${tag.node.slug}`}>
+            <Link
+              className="taglist__item__link"
+              to={`/blog/tag/${tag.node.slug}`}>
               {tag.node.name}
             </Link>
           </li>
@@ -22,6 +25,4 @@ function taglist({ tags }) {
     </div>
   );
 }
-
-export default taglist;
 

@@ -18,8 +18,8 @@ export default function CategoryBySlug({ params }) {
   return (
     <>
       <CategoryPost data={data} />
-
-      {/* load more button> */}
+      
+      {/* load more button */}
       {data.category.posts.pageInfo.hasNextPage === true && (
         <button
           className="load-more__button"
