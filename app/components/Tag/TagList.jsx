@@ -12,11 +12,11 @@ export default function TagList() {
   return (
     <div className="taglist-wrap">
       <ul className="taglist">
-        {tags.edges.node.map((tag) => (
-          <li className="taglist__item" key={tag.node.id}>
+        {data.tags.edges.map((tag) => (
+          <li className="taglist__item" key={tag.node.tagId}>
             <Link
               className="taglist__item__link"
-              to={`/blog/tag/${tag.node.slug}`}>
+              href={`/blog/tag/${tag.node.slug}`}>
               {tag.node.name}
             </Link>
           </li>
