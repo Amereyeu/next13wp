@@ -10,7 +10,7 @@ export default function AllCategories() {
   console.log("All categories:", data);
 
   return (
-    <div className="allcategories">
+    <div className="allcategories" >
       <ul>
         {data.categories.nodes.map((category) => (
           <li key={category.id}>
