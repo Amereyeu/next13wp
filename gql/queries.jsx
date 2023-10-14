@@ -2,8 +2,8 @@ import { gql } from "@apollo/client";
 
 // show all posts on the post page
 const GET_ALL_POSTS = gql`
-  query getAllPosts {
-    posts(first: 9) {
+  query getAllPosts($after: String) {
+    posts(first: 9, after: $after) {
       nodes {
         language {
           code
@@ -11,7 +11,6 @@ const GET_ALL_POSTS = gql`
           slug
           name
           id
-          
         }
         id
         slug
@@ -62,6 +61,10 @@ const GET_ALL_POSTS = gql`
             content
           }
         }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
       }
     }
     categories {
@@ -451,6 +454,9 @@ export {
   GET_ALL_TAGS,
   LOGIN_USER
 };
+
+
+
 
 
 

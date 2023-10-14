@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Post({ data }) {
   return (
-    <div>
+    <>
       {data ? (
         <div className="container" id="top">
           {data.posts.nodes.map((post) => (
@@ -18,7 +18,7 @@ export default function Post({ data }) {
           <h2>No posts</h2>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

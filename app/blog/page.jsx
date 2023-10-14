@@ -5,11 +5,11 @@ export const dynamic = "force-dynamic";
 
 export default function Blog() {
   return (
-    <div>
+    <>
     <AllCategories />
 
-    <Posts />;
-    </div>
+    <Posts />
+    </>
   )
   
   
