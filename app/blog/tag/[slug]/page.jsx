@@ -16,7 +16,7 @@ export default function TagBySlug({ params }) {
   console.log("tagPost:", data);
 
   return (
-    <>
+    <div>
       <TagPost data={data} />
 
       {/* load more button */}
@@ -40,7 +40,7 @@ export default function TagBySlug({ params }) {
           <a>Load more posts</a>
         </button>
       )} */}
-    </>
+    </div>
   );
 }
 

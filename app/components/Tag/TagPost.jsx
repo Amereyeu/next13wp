@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function TagPost({ data }) {
   return (
-    <>
+    <div>
       {data.tag.posts.nodes.length > 0 ? (
         <div className="container" id="top">
           {data.tag.posts.nodes.map((post) => (
@@ -20,7 +20,7 @@ export default function TagPost({ data }) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

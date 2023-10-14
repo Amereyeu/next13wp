@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function CategoryPost({ data }) {
   return (
-    <>
+    <div>
       {data.category.posts.nodes.length > 0 ? (
         <div className="container" id="top">
           {data.category.posts.nodes.map((post) => (
@@ -20,7 +20,7 @@ export default function CategoryPost({ data }) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

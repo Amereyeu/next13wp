@@ -16,7 +16,7 @@ export default function CategoryBySlug({ params }) {
   console.log("categoryPost:", data);
 
   return (
-    <>
+    <div>
       <CategoryPost data={data} />
 
       {/* load more button> */}
@@ -40,7 +40,7 @@ export default function CategoryBySlug({ params }) {
           <a>Load more posts</a>
         </button>
       )}
-    </>
+    </div>
   );
 }
 
