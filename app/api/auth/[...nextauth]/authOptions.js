@@ -10,8 +10,6 @@ export const authOptions = {
         password: { label: "Password" },
       },
       authorize(credentials, req) {
-        // Perform database operations
-
         if (
           credentials?.email === "test@test.com" &&
           credentials.password === "test"
@@ -27,3 +25,4 @@ export const authOptions = {
     }),
   ],
 };
+

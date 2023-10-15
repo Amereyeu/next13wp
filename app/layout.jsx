@@ -9,6 +9,7 @@ import "./styles.scss";
 
 import { useEffect, useState } from "react";
 import SecondaryNavigation from "./components/Navigation/SecondaryNavigation";
+
 import NextAuthSessionProvider from "./providers/sessionProvider";
 
 export default function RootLayout({ children }) {
