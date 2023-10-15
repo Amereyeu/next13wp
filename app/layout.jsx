@@ -9,6 +9,7 @@ import "./styles.scss";
 
 import { useEffect, useState } from "react";
 import SecondaryNavigation from "./components/Navigation/SecondaryNavigation";
+import NextAuthSessionProvider from "./providers/sessionProvider";
 
 export default function RootLayout({ children }) {
   const [theme, setTheme] = useState(
@@ -28,11 +29,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Navigation handleThemeChange={handleThemeChange} theme={theme} />
-        <ApolloWrapper>{children}</ApolloWrapper>
+        <NextAuthSessionProvider>
+          <ApolloWrapper>{children}</ApolloWrapper>
+        </NextAuthSessionProvider>
         <Footer />
         <SecondaryNavigation />
       </body>
     </html>
   );
 }
+
 
