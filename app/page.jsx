@@ -1,5 +1,4 @@
 import CustomPosts from "./components/CustomPosts/CustomPosts";
-import FileUpload from "./components/FileUpload/FileUpload";
 import Hero from "./components/Hero";
 import ModalGallery from "./components/ModalGallery/ModalGallery";
 import Newsletter from "./components/Newsletter";
