@@ -11,7 +11,7 @@ export default function Posts() {
     },
   });
 
-  console.log("data", data);
+  // console.log("posts:", data);
 
   return (
     <>

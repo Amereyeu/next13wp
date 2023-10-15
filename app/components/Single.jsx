@@ -5,7 +5,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 
 export default function Single() {
   const { data } = useSuspenseQuery(GET_SINGLE_PAGE);
-  console.log("SINGLE-page:", data);
+  // console.log("SINGLE-page:", data);
 
   // single page
   return (

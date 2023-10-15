@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function CategoryList() {
   const { data } = useSuspenseQuery(GET_ALL_CATEGORIES);
 
-  console.log("All categories:", data);
+  // console.log("All categories:", data);
 
   return (
     <div className="container" id="top">

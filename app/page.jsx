@@ -1,11 +1,9 @@
-
-
 import CustomPosts from "./components/CustomPosts/CustomPosts";
+import FileUpload from "./components/FileUpload/FileUpload";
 import Hero from "./components/Hero";
 import ModalGallery from "./components/ModalGallery/ModalGallery";
 import Newsletter from "./components/Newsletter";
 import Single from "./components/Single";
-
 
 export const metadata = {
   title: "Next13 demo",
@@ -17,7 +15,6 @@ export const metadata = {
   },
   manifest: "/site.webmanifest",
 };
-
 
 export default function Home() {
   return (
@@ -34,7 +31,4 @@ export default function Home() {
     </main>
   );
 }
-
-
-
 

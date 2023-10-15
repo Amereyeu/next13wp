@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function TagList() {
   const { data } = useSuspenseQuery(GET_ALL_TAGS);
 
-  console.log("All tags:", data);
+  // console.log("All tags:", data);
 
   return (
     <div className="container" id="top">

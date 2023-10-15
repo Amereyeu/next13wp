@@ -7,7 +7,7 @@ import CustomPost from "./CustomPost";
 export default function CustomPosts() {
   const { data } = useSuspenseQuery(GET_ALL_CUSTOM_POSTS);
 
-  console.log("customPosts:", data);
+  // console.log("customPosts:", data);
 
   return <CustomPost data={data} />;
 }
