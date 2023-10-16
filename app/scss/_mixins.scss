@@ -30,3 +30,13 @@
     border-color: darken($color, 10%);
   }
 }
+
+@mixin arrowDown($color, $arrowWidth, $arrowHeight) {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: $arrowHeight solid $color;
+  border-left: ($arrowWidth/2) solid transparent;
+  border-right: ($arrowWidth/2) solid transparent;
+}
