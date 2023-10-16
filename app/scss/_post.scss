@@ -195,25 +195,26 @@
   justify-content: space-between;
   max-width: 1000px;
   margin: 0 auto;
-  
+
   .item {
     width: 100%;
     display: grid;
     place-items: center;
-    background: #acbfcc;
     padding: 20vh 0;
-    
+
+    $colors: #acbfcc, #91aabb, #2d5e7e;
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}n) {
+        background: nth($colors, $i);
+      }
+    }
+
     @include break($medium) {
       width: 50%;
     }
 
-    &:nth-child(2n) {
-      background: #91aabb;
-    }
-
     &:nth-child(3n) {
       width: 100%;
-      background: #2d5e7e;
 
       h2 {
         a {
@@ -221,12 +222,12 @@
         }
       }
     }
-    
+
     h2 {
       text-transform: uppercase;
       text-align: center;
       padding: 4rem 2rem;
-      
+
       a {
         font-family: $heading;
         font-size: 3rem;
@@ -242,3 +243,4 @@
   place-content: center;
   height: 100vh;
 }
+
