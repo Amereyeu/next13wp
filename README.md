@@ -1,3 +1,9 @@
+<!-- TOC -->
+
+- [Getting Started](#getting-started)
+
+<!-- /TOC -->
+
 ## Getting Started
 
 development server:
