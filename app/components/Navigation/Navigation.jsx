@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { GiSun, GiMoon } from "react-icons/gi";
+import moon from "@/public/img/moon.svg";
+import sun from "@/public/img/sun.svg";
 
 import data from "@/data/nav.json";
 
@@ -77,7 +79,7 @@ export default function Navigation({ handleThemeChange, theme }) {
               onClick={handleThemeChange}
               aria-label="Theme Switch"
               className={`switch ${isShrunk ? "small" : ""}`}>
-              {theme === "light" ? <GiMoon /> : <GiSun />}
+              {theme === "light" ? <Image src={moon} /> : <Image src={sun} />}
             </div>
           </div>
         </div>
@@ -85,4 +87,3 @@ export default function Navigation({ handleThemeChange, theme }) {
     </div>
   );
 }
-
