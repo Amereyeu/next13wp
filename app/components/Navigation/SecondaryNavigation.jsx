@@ -21,6 +21,8 @@ export default function SecondaryNavigation() {
     }
   };
 
+  
+
   window.addEventListener("scroll", checkScrollTop);
 
   return (
