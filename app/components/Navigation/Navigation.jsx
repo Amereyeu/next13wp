@@ -1,15 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { ThemeContext } from "@/context/ThemeContext";
 import moon from "@/public/img/moon.svg";
 import sun from "@/public/img/sun.svg";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useContext, useEffect, useState } from "react";
 
 import data from "@/data/nav.json";
 
-export default function Navigation({ handleThemeChange, theme }) {
+export default function Navigation() {
+  const { theme, setTheme, lightTheme, darkTheme } = useContext(ThemeContext);
+
   const [isShrunk, setShrunk] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [navigationData] = useState(data);
@@ -17,6 +20,11 @@ export default function Navigation({ handleThemeChange, theme }) {
 
   const toggleNavigation = () => {
     setIsNavOpen(!isNavOpen);
+  };
+
+  const handleThemeChange = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+    console.log("theme is:", theme);
   };
 
   useEffect(() => {

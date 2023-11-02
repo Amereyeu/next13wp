@@ -12,6 +12,7 @@ import SecondaryNavigation from "./components/Navigation/SecondaryNavigation";
 
 import SessionProvider from "./providers/sessionProvider";
 import { getServerSession } from "next-auth";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export default async function RootLayout({ children }) {
   // const [theme, setTheme] = useState(
@@ -32,18 +33,17 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {/* <Navigation handleThemeChange={handleThemeChange} theme={theme} /> */}
-        <Navigation />
-        <SessionProvider session={session}>
-          <ApolloWrapper>{children}</ApolloWrapper>
-        </SessionProvider>
-        <Footer />
-        <SecondaryNavigation />
+        <ThemeProvider>
+          {/* <Navigation handleThemeChange={handleThemeChange} theme={theme} /> */}
+          <Navigation />
+          <SessionProvider session={session}>
+            <ApolloWrapper>{children}</ApolloWrapper>
+          </SessionProvider>
+          <Footer />
+          <SecondaryNavigation />
+        </ThemeProvider>
       </body>
     </html>
   );
 }
-
-
-
 
