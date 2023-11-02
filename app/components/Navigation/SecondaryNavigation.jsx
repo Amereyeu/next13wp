@@ -1,8 +1,8 @@
-"use state"
+"use state";
 
 import { useState } from "react";
 import { RiArrowUpSLine, RiHome4Fill } from "react-icons/ri";
-import Link from "next/link"
+import Link from "next/link";
 
 export default function SecondaryNavigation() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -20,8 +20,6 @@ export default function SecondaryNavigation() {
       setShowScroll(false);
     }
   };
-
-  
 
   window.addEventListener("scroll", checkScrollTop);
 
@@ -56,6 +54,4 @@ export default function SecondaryNavigation() {
     </div>
   );
 }
-
-
 
