@@ -1,0 +1,70 @@
+/*********************************************
+ * login form
+ *********************************************/
+
+.form-wrap {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+.form {
+  position: relative;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  color: $color-white;
+  border-bottom: 11px solid $color-orange;
+  width: 100%;
+  background: $color-black;
+  box-shadow: 1px 1px 108.8px 19.2px rgb(25, 31, 53);
+  border-radius: 0.5rem;
+
+  &__input {
+    display: block;
+    margin: 0 auto 2rem;
+    background: #262e49;
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.625rem 1rem;
+    width: 100%;
+    outline: none;
+    color: #d6d6d6;
+    transition: all 0.2s ease-out;
+
+    &:focus {
+      outline: 3px solid $color-orange;
+    }
+  }
+
+  &__button {
+    border: 0;
+    background: $color-orange;
+    color: $color-white;
+    border-radius: 100px;
+    width: 280px;
+    height: 49px;
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  &__error {
+    background: #f00;
+    padding: 0.5rem;
+    color: $color-white;
+    text-align: center;
+    font-size: 12px;
+    position: absolute;
+    top: 8px;
+    width: 90%;
+  }
+
+  label {
+    display: none;
+  }
+}
+

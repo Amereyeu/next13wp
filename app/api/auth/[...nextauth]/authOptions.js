@@ -14,11 +14,11 @@ export const authOptions = {
         },
         password: { label: "Password", type: "password" },
       },
-      authorize(credentials, req) {
+      async authorize(credentials, req) {
         const user = {
           id: "1",
           username: process.env.NEXT_PROTECTED_USERNAME,
-          email: process.env.NEXT_PROTECTED_SECRET,
+          password: process.env.NEXT_PROTECTED_SECRET,
         };
 
         if (
@@ -29,33 +29,10 @@ export const authOptions = {
         } else {
           return null;
         }
-        // if (
-        //   credentials?.username === process.env.NEXT_PROTECTED_USERNAME &&
-        //   credentials.password === process.env.NEXT_PROTECTED_SECRET
-        // ) {
-        //   return {
-        //     id: "1",
-        //     email: "test@test.com",
-        //     user: "test",
-        //   };
-        // }
-
-        // return null;
       },
     }),
   ],
 };
-
-// import GitHubProvider from "next-auth/providers/github";
-
-// export const authOptions = {
-//   providers: [
-//     GitHubProvider({
-//       clientId: process.env.GITHUB_ID ?? "",
-//       clientSecret: process.env.GITHUB_SECRET ?? "",
-//     }),
-//   ],
-// };
 
 export const handler = NextAuth(authOptions);
 

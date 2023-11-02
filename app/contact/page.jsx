@@ -5,7 +5,7 @@ import ContactForm from "../components/Contact/ContactForm";
 import ContactInfo from "../components/Contact/ContactInfo";
 import Faqs from "../components/Faq/Faqs";
 
-export default function Contact() {
+export default async function Contact() {
   return (
     <div className="contact-wrap">
       <div className="contact">

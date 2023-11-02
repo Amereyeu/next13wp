@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Single from "../components/Single";
 
 // export const metadata = {
@@ -18,7 +18,7 @@ export default function About() {
 
   return (
     <main>
-      <Single />
+      <Single session={session} signOut={signOut} />
     </main>
   );
 }

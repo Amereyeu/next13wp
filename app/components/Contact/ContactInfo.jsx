@@ -16,7 +16,7 @@ import {
 export default function ContactInfo() {
   const { data } = useSuspenseQuery(GET_CONTACT_PAGE);
 
-  console.log("contactInfo:", data);
+  // console.log("contactInfo:", data);
 
   return (
     <>
