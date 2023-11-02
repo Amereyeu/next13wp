@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { ApolloWrapper } from "../lib/apollo-wrapper";
 
@@ -7,37 +7,43 @@ import Footer from "./components/Footer";
 
 import "./styles.scss";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import SecondaryNavigation from "./components/Navigation/SecondaryNavigation";
 
-import NextAuthSessionProvider from "./providers/sessionProvider";
+import SessionProvider from "./providers/sessionProvider";
+import { getServerSession } from "next-auth";
 
-export default function RootLayout({ children }) {
-  const [theme, setTheme] = useState(
-    JSON.parse(localStorage.getItem("theme")) || "light"
-  );
+export default async function RootLayout({ children }) {
+  // const [theme, setTheme] = useState(
+  //   JSON.parse(localStorage.getItem("theme")) || "light"
+  // );
 
-  const handleThemeChange = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-  };
+  // const handleThemeChange = () => {
+  //   theme === "light" ? setTheme("dark") : setTheme("light");
+  // };
 
-  useEffect(() => {
-    localStorage.setItem("theme", JSON.stringify(theme));
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
+  // useEffect(() => {
+  //   localStorage.setItem("theme", JSON.stringify(theme));
+  //   document.documentElement.setAttribute("data-theme", theme);
+  // }, [theme]);
+
+  const session = await getServerSession();
 
   return (
     <html lang="en">
       <body>
-        <Navigation handleThemeChange={handleThemeChange} theme={theme} />
-        <NextAuthSessionProvider>
+        {/* <Navigation handleThemeChange={handleThemeChange} theme={theme} /> */}
+        <Navigation />
+        <SessionProvider session={session}>
           <ApolloWrapper>{children}</ApolloWrapper>
-        </NextAuthSessionProvider>
+        </SessionProvider>
         <Footer />
         <SecondaryNavigation />
       </body>
     </html>
   );
 }
+
+
 
 

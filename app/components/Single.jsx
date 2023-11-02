@@ -2,10 +2,14 @@
 
 import { GET_SINGLE_PAGE } from "@/gql/queries";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+import { signOut, useSession } from "next-auth/react";
 
 export default function Single() {
   const { data } = useSuspenseQuery(GET_SINGLE_PAGE);
+
   // console.log("SINGLE-page:", data);
+
+  const { data: session } = useSession();
 
   // single page
   return (
@@ -32,8 +36,13 @@ export default function Single() {
           </div>
         </div>
       )}
+
+      {session && (
+        <>
+          <button onClick={() => signOut()}>Sign out</button>
+        </>
+      )}
     </>
   );
 }
-
 

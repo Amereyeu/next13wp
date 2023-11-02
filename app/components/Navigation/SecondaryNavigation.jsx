@@ -1,4 +1,4 @@
-"use state";
+"use client";
 
 import { useState } from "react";
 import { RiArrowUpSLine, RiHome4Fill } from "react-icons/ri";
