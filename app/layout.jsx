@@ -34,7 +34,6 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ThemeProvider>
-          {/* <Navigation handleThemeChange={handleThemeChange} theme={theme} /> */}
           <Navigation />
           <SessionProvider session={session}>
             <ApolloWrapper>{children}</ApolloWrapper>

@@ -24,7 +24,6 @@ export default function Navigation() {
 
   const handleThemeChange = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
-    console.log("theme is:", theme);
   };
 
   useEffect(() => {
