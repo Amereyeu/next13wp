@@ -4,9 +4,19 @@ import defaultImage from "@/public/img/hero.png";
 import { FaRegComments, FaRegClock, FaRegUser } from "react-icons/fa";
 import { format } from "date-fns";
 import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
+
+// import hljs from "highlight.js/lib/core";
+// import javascript from "highlight.js/lib/languages/javascript";
+// hljs.registerLanguage("javascript", javascript);
+// import "highlight.js/styles/github-dark.css";
 
 export default function PostDetail({ data }) {
   const router = useRouter();
+
+  // useEffect(() => {
+  //   hljs.highlightAll();
+  // }, []);
 
   return (
     <div className="detail" id="top">

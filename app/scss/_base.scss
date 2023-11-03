@@ -32,14 +32,14 @@ $xlarge: 1200px;
   --table: #eee;
 }
 
-html[data-theme="dark"] {
+main[data-theme="dark"] {
   --bg: #2f2f2f;
   --text: #fcfcfc;
   --table: #3d3d3d;
 
 }
 
-body {
+main {
   background-color: var(--bg);
   color: var(--text);
 }

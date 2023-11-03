@@ -86,7 +86,11 @@ export default function Navigation() {
               onClick={handleThemeChange}
               aria-label="Theme Switch"
               className={`switch ${isShrunk ? "small" : ""}`}>
-              {theme === "light" ? <Image src={moon} /> : <Image src={sun} />}
+              {theme === "light" ? (
+                <Image src={moon} alt="moon" />
+              ) : (
+                <Image src={sun} alt="sun" />
+              )}
             </div>
           </div>
         </div>
